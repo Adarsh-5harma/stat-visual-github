@@ -6,6 +6,7 @@ print(response.status_code)
 
 data = response.json()
 
+# only get the data we want and put it in a dictionary
 profile_data = {
     "username": data.get("login"),
     "name": data.get("name"),
