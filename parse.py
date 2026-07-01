@@ -2,7 +2,7 @@
 import requests
 
 response = requests.get("https://api.github.com/users/Adarsh-5harma")
-print(response.status_code)
+# print(response.status_code)
 
 data = response.json()
 
@@ -17,7 +17,15 @@ profile_data = {
     "following": data.get("following"),
     "created_at": data.get("created_at"),
     'updated_at': data.get("updated_at"),
-    "avatar_url": data.get("avatar_url"),
+    "repos_url": data.get("repos_url"),
 }
 
-print(profile_data)
+# print(profile_data)
+
+
+repos_response = requests.get(profile_data["repos_url"])
+# print(repos_response.status_code)
+
+repos_data = repos_response.json()
+print(len(repos_data))
+print(f"\nThis is the first data of repo:\n {repos_data[0]}")  # print the first repo's data
