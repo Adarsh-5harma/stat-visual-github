@@ -27,5 +27,5 @@ repos_response = requests.get(profile_data["repos_url"])
 # print(repos_response.status_code)
 
 repos_data = repos_response.json()
-print(len(repos_data))
-print(f"\nThis is the first data of repo:\n {repos_data[0]}")  # print the first repo's data
+# print(len(repos_data))
+# print(f"\nThis is the first data of repo:\n {repos_data[0]}")  # print the first repo's data
